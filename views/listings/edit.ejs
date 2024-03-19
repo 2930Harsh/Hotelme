@@ -1,0 +1,39 @@
+<% layout("/layout/boilerplate") -%>
+<div class="row">
+<div class="col-8 offset-2">
+    <br><br>
+    <body>
+        <h3>Create New Listing</h3>
+        <br>
+        <form action="/listings/<%=listing._id%>?_method=PUT" method="POST">
+            <div class="mb-3"><label for="title" class="form-label mb-0">Title</label>
+                <input type="text" name="listing[title]" placeholder="Add a Catchy Title" value="<%=listing.title%>" class="form-control"/></div>
+                
+                <div class="mb-3"><label for="description" class="form-label mb-0">Description</label>
+                    <textarea name="listing[description]" class="form-control" ><%=listing.description%> 
+                    </textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label mb-0">Image Link</label>
+                    <input type="text" name="listing[image]" placeholder="Image URL/Link"  value="<%=listing.image%>" class="form-control" />
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="price" class="form-label mb-0">Price</label>
+                        <input type="number" name="listing[price]" placeholder="1200" value="<%=listing.price%>" class="form-control" />
+                    </div>
+                    <div class="mb-3 col-md-8">
+                        <label for="country" class="form-label mb-0">Country</label>
+                        <input type="text" name="listing[country]" placeholder="India" value="<%=listing.country%>" class="form-control"/>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label mb-0">Location</label>
+                    <input type="text" name="listing[location]" placeholder="Haryana"  value="<%=listing.location%>" class="form-control"/>
+                </div>
+                <br>
+                <button class="btn btn-dark add-btn">SAVE</button>  
+            </form>
+        </body>
+    </div>
+</div>
